@@ -17,6 +17,12 @@
   </div>
 
   <div class="field">
+    <%= f.label :access_type, "Public", :value => "true", class: "radio-style"  %>
+    <%= f.radio_button :access_type, true %>
+    <%= f.label :access_type, "Private", :value => "false", class: "radio-style" %>
+    <%= f.radio_button :access_type, false %>
+  </div>
+  <div class="field">
     <%= f.label :latitude %>
     <%= f.text_field :latitude %>
   </div>

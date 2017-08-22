@@ -5,14 +5,14 @@ class LocationsController < ApplicationController
 
   # GET /locations
   # GET /locations.json  
-  def index
+  def index    
     if params[:search].present?
       @locations = Location.near(params[:search])
     else
-      if current_user.present?
+      if params[:profile].blank?       
         @locations = Location.where(user_id: current_user.friends.pluck(:id).push(current_user.id))
-      else
-        @locations = Location.all
+      else            
+        @locations = Location.where(access_type: true)
       end
     end
   end
@@ -34,7 +34,7 @@ class LocationsController < ApplicationController
 
   # POST /locations
   # POST /locations.json
-  def create   
+  def create      
     @location = current_user.locations.build(location_params)
 
     respond_to do |format|
@@ -81,8 +81,9 @@ class LocationsController < ApplicationController
     def friends_check       
       user = current_user.friends.pluck(:id).push(current_user.id)
       check_user = Location.find(params[:id]).user_id
-
-      unless user.include?(check_user)
+      access_type = Location.find(params[:id]).access_type
+     
+      unless access_type || user.include?(check_user) 
         flash[:notice] = "Cannot Access others profile other than your friends"
         redirect_to root_url
       end
@@ -90,6 +91,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:address, :latitude, :longitude, :user_id)
+      params.require(:location).permit(:address, :latitude, :longitude, :user_id, :access_type)
     end
 end

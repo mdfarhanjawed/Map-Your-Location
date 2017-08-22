@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821203723) do
+ActiveRecord::Schema.define(version: 20170822073238) do
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "user_id"
@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(version: 20170821203723) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "access_type", default: true
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
