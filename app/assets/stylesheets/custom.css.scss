@@ -5,6 +5,10 @@
 	background-color: black;
 }
 
+a:hover {
+	color:white !important;
+}
+
 .radio-style {
 	display: inline-block;
 }
@@ -41,7 +45,7 @@
 
 .before-login {
 	color:white;
-	font-size: 18px;
+	font-size: 1px;
 }
 
 .style-signin {
@@ -58,6 +62,10 @@
 .remove-friendship {
 	float: right;
     margin-right: 64px;
+}
+
+#logo {
+	color:white !important;
 }
 
 #site-logo {
@@ -92,7 +100,7 @@
 #location-header {
 	font-size: 24px;
     text-align: center;
-    color: #85f938;
+    color: #ff6666;
     text-decoration: underline
 }
 
@@ -111,9 +119,6 @@
     padding: 8px;
 }
 
-.navbar-default .navbar-nav > li > a:hover,a {
-	color: white
-}
 p {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 12px;
@@ -163,6 +168,12 @@ a:active {
 
 }
 
+.friends-header {
+	font-size: 25px;
+	text-align: center;
+	color: #0088cc;
+}
+
 .friendship-style .btn-success a:link{
 	color: black;
 }
@@ -198,3 +209,4 @@ a:active {
     margin-top: 20px;
     border-radius: 10px;
 }
+
