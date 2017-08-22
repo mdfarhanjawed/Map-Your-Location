@@ -1,9 +1,10 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :friends_check, only: [:show, :edit, :update, :destroy]
 
   # GET /locations
-  # GET /locations.json
+  # GET /locations.json  
   def index
     if params[:search].present?
       @locations = Location.near(params[:search])
@@ -75,6 +76,16 @@ class LocationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_location
       @location = Location.find(params[:id])
+    end
+
+    def friends_check       
+      user = current_user.friends.pluck(:id).push(current_user.id)
+      check_user = Location.find(params[:id]).user_id
+
+      unless user.include?(check_user)
+        flash[:notice] = "Cannot Access others profile other than your friends"
+        redirect_to root_url
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
