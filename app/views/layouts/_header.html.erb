@@ -28,7 +28,10 @@
             <%= link_to('Add New Location', new_location_path) %>        
           </li>
           <li>            
-            <%= link_to('View Shared Location', locations_path) %>        
+            <%= link_to('View Friends Location', locations_path) %>        
+          </li> 
+           <li>            
+            <%= link_to('View Public Location', locations_path(profile: "public")) %>        
           </li> 
           <li>
             <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
