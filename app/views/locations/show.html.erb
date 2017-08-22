@@ -21,9 +21,15 @@
 		  <strong class="common-text">User:</strong>
 		  <%= @location.user.username %>
 		</p>
+
+		<p class="common-map-text">
+		  <strong class="common-text">Your Profile is:</strong>
+		  <%= @location.access_type? ? "Public" : "Private" %>
+		</p>
+
 		<p>
 			<%= link_to 'Back', locations_path, class: "btn btn-success" %>
-		</p>
+		</p>	
 		
 	</div>
 	<div class="col-md-6">

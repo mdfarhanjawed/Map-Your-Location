@@ -28,7 +28,7 @@
           <td><%= location.latitude %></td>
           <td><%= location.longitude %></td>       
           <td><%= location.user.username %></td>
-          <td><%= link_to 'Show', location, class: "btn btn-success btn-show btn-xs" %></td>        
+          <td><%= link_to 'Map', location, class: "btn btn-success btn-show btn-xs" %></td>        
           <% if current_user == location.user %>
             <td><%= link_to 'Edit', edit_location_path(location), class: "btn btn-info btn-xs" %></td>
             <td><%= link_to 'Destroy', location,class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>
