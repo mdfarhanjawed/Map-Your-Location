@@ -1,0 +1,20 @@
+<div class="location-style">
+	<h1 id="friend-header">Add Friend to View their shared location</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Name: </th>
+				<th>Add Friends:</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @users.each do |user| %>
+				<tr>
+					<td> <%= user.username %> </td>
+					<td><%= link_to "+ Add Friend", friendships_path(friend_id: user), class: "btn btn-success friendship-style btn-show btn-xs", :method => :post %></td>	
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

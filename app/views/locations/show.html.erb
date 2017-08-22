@@ -1,0 +1,35 @@
+<div>
+	<div class="col-md-6">
+		<p id="notice"><%= notice %></p>
+
+		<p>
+		  <strong class="common-text">Address:</strong>
+		  <%= @location.address %>
+		</p>
+
+		<p class="common-map-text">
+		  <strong class="common-text">Latitude:</strong>
+		  <%= @location.latitude %>
+		</p>
+
+		<p class="common-map-text"> 
+		  <strong class="common-text">Longitude:</strong>
+		  <%= @location.longitude %>
+		</p>
+
+		<p class="common-map-text">
+		  <strong class="common-text">User:</strong>
+		  <%= @location.user.username %>
+		</p>
+		<p>
+			<%= link_to 'Back', locations_path, class: "btn btn-success" %>
+		</p>
+		
+	</div>
+	<div class="col-md-6">
+		<%= image_tag "https://maps.google.com/maps/api/staticmap?size=500x500&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude} ", class: "map-style" %>
+		<br>
+	</div>
+
+	
+</div>

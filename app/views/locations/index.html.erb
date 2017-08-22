@@ -1,0 +1,43 @@
+<div class="location-style">
+  <p id="notice"><%= notice %></p>
+
+  <h1 id="location-header">Locations</h1>
+  <div class="search-style">
+    <%= form_tag locations_path, method: :get do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search Nearby", class: "btn btn-primary btn-sm" %>
+      </p>
+    <% end %>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Address</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>User</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @locations.each do |location| %>
+        <tr>
+          <td><%= location.address %></td>
+          <td><%= location.latitude %></td>
+          <td><%= location.longitude %></td>       
+          <td><%= location.user.username %></td>
+          <td><%= link_to 'Show', location, class: "btn btn-success btn-show btn-xs" %></td>        
+          <% if current_user == location.user %>
+            <td><%= link_to 'Edit', edit_location_path(location), class: "btn btn-info btn-xs" %></td>
+            <td><%= link_to 'Destroy', location,class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</div>
+
+

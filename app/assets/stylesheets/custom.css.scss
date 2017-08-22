@@ -1,0 +1,178 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar-default {
+	background-color: black;
+}
+
+.location-style {
+	position: relative;
+	left: 50px	
+}
+
+.add-location {
+	font-size: 20px;
+	margin-bottom: 10px;    
+    color: #f44153;
+    text-decoration: underline
+}
+.btn .btn-primary {
+	background-color: white;
+}
+
+.friend-remove {
+	display: inline;
+	margin-right: 30px;
+	font-size: 20px;
+}
+
+.friend-name {
+	font-size: 20px;
+	margin-bottom: 10px;    
+    color: #f44153;
+    text-decoration: underline
+}
+
+.remove-friendship {
+	float: right;
+    margin-right: 64px;
+}
+
+#site-logo {
+	color:  #ff5c33;
+}
+
+.map-style {
+	 border: medium dotted;
+    color: green;
+}
+
+.common-text {
+	font-size: 15px;
+	color:  #ff6600;
+}
+
+.friend-header {
+	font-size: 24px;
+    text-align: center;
+    color: #4286f4;
+    margin-left: 143px;
+    text-decoration: underline
+}
+
+#friend-header {
+	font-size: 24px;    
+    margin-left: 160px;
+    color: #4286f4;
+    text-decoration: underline
+}
+
+#location-header {
+	font-size: 24px;
+    text-align: center;
+    color: #85f938;
+    text-decoration: underline
+}
+
+.search-style {
+	float: right;
+    margin-right: 26px;
+}
+
+.location-style table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.location-style th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,a {
+	color: white
+}
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000099;
+}
+body {
+	margin: 0px;
+}
+
+.btn-success {
+	background-color: white;
+	color: black	
+}
+
+.btn-danger {
+	background-color: white;
+	color:black;
+}
+.redtext {
+	color: #FF0000;
+}
+a {
+	color: white;
+}
+a:link {
+	
+	text-decoration: none;
+}
+
+a:visited {
+	color: white;
+	text-decoration: none;
+
+}
+a:hover {
+	text-decoration: none;
+	background-color: #CCCCCC;
+	color: white
+}
+a:active {
+	text-decoration: none;
+
+}
+
+.friendship-style .btn-success a:link{
+	color: black;
+}
+
+.menu {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+}
+.menu a:link {
+	color: white;
+	text-decoration: none;
+}
+.menu a:visited {
+	color: #666666;
+	text-decoration: none;
+}
+
+.menu a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.menu a:active {
+	color: #666666;
+	text-decoration: none;
+}   
+.w3c-default{
+    width: 70%;
+    margin: auto;
+    padding: 50px;
+    border: 1px solid rgb(216, 216, 216);
+    margin-top: 20px;
+    border-radius: 10px;
+}
