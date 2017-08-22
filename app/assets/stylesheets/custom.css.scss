@@ -9,6 +9,15 @@
 	display: inline-block;
 }
 
+.remember-me {
+	display: inline-block;
+    vertical-align: top;
+}
+
+.login-in {
+	text-align: center;
+}
+
 .location-style {
 	position: relative;
 	left: 50px	
@@ -28,6 +37,15 @@
 	display: inline;
 	margin-right: 30px;
 	font-size: 20px;
+}
+
+.before-login {
+	color:white;
+	font-size: 18px;
+}
+
+.style-signin {
+	display: inline-block;	
 }
 
 .friend-name {

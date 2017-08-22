@@ -21,17 +21,9 @@
     <%= f.radio_button :access_type, true %>
     <%= f.label :access_type, "Private", :value => "false", class: "radio-style" %>
     <%= f.radio_button :access_type, false %>
-  </div>
-  <div class="field">
-    <%= f.label :latitude %>
-    <%= f.text_field :latitude %>
-  </div>
-
-  <div class="field">
-    <%= f.label :longitude %>
-    <%= f.text_field :longitude %>
-  </div> 
-
+  </div>     
+    <%= f.hidden_field :latitude %>      
+    <%= f.hidden_field :longitude %>
   <div class="actions">
     <%= f.submit class: "btn btn-primary btn-md" %>
   </div>
