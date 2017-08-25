@@ -4,9 +4,9 @@
 	<table>
 		<th class="friend-name">Friends name</th>		
 		<% @user.friendships.each do |friendship|%>
-		<tr>
+		<tr id="remove-<%= friendship.id %>">
 			<td class="friend-remove"><%= friendship.friend.username %></li>
-			<td><%= link_to "- Remove Friend", friendship, class: "btn btn-danger remove-friendship btn-md", method: :delete %></span>
+			<td><%= link_to "- Remove Friend", friendship,class: "btn btn-danger remove-friendship btn-md", remote: true, method: :delete, id: "remove-friend" %></span>
 		</tr>
 		<% end %>
 	</ul>
