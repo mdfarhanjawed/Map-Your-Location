@@ -14,4 +14,11 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require locations
 //= require_tree .
+
+
+$(document).on('change', '#locations', function() {
+  $(this).parent().submit();
+});
+

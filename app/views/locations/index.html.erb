@@ -1,7 +1,10 @@
 <div class="location-style">
   <p id="notice"><%= notice %></p>
 
-  <h1 id="location-header">Locations</h1>
+  <h1 id="location-header">Locations</h1>    
+  <%= form_for locations_path, method: 'get' do  %>
+    <%= select_tag("locations", options_from_collection_for_select(User.find(Location.all.map { |p|p.user_id}), "id", "username", {selected: params[:locations]}))%>
+  <% end %>
   <div class="search-style">
     <%= form_tag locations_path, method: :get do %>
       <p>

@@ -5,16 +5,11 @@ class LocationsController < ApplicationController
 
   # GET /locations
   # GET /locations.json  
-  def index    
-    if params[:search].present?
-      @locations = Location.near(params[:search])
-    else
-      if params[:profile].blank?       
-        @locations = Location.where(user_id: current_user.friends.pluck(:id).push(current_user.id))
-      else            
-        @locations = Location.where(access_type: true)
-      end
-    end
+  def index      
+    @locations = Location.near(params[:search]) if params[:search].present?    
+    @locations = Location.where(user_id: current_user.friends.pluck(:id).push(current_user.id)) 
+    @locations = Location.where(user_id: params[:locations] ) if params[:locations].present?
+    @locations = Location.where(access_type: true)  if params[:profile]=="public"   
   end
 
   # GET /locations/1
@@ -90,7 +85,7 @@ class LocationsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def location_params
-      params.require(:location).permit(:address, :latitude, :longitude, :user_id, :access_type)
+    def location_params       
+      params.require(:location).permit(:address, :latitude, :longitude,:user_id, :access_type, :locate)
     end
 end
