@@ -12,10 +12,10 @@ class FriendshipsController < ApplicationController
     end    
   end
 
-  def destroy
-    @friendship = current_user.friendships.find(params[:id])
-    @friendship.destroy
-    flash[:notice] = "Removed Friendship"
-    redirect_to root_url
+  def destroy    
+    if request.xhr?      
+      @friendship = current_user.friendships.find(params[:id])
+      @friendship.destroy                  
+    end
   end  
 end
